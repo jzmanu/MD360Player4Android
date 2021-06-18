@@ -20,17 +20,33 @@ import java.util.ArrayList;
 
 /**
  * Created by nitro888 on 15. 4. 5..
- *
  * modify by hzqiujiadi on 16/1/22.
- * hzqiujiadi ashqalcn@gmail.com
+ * modify by jzman on 21/05/21.
  */
 public class GLUtil {
 
     private static final String TAG = "GLUtil";
 
+    /** 4 x 4列向量矩阵 */
     public static final float[] sIdentityMatrix = new float[16];
 
     static {
+        /**
+         * 设置这个矩阵为单位矩阵
+         * Matrix.setIdentityM(sIdentityMatrix, 0)
+         * [1.0, 0.0, 0.0, 0.0,
+         *  0.0, 1.0, 0.0, 0.0,
+         *  0.0, 0.0, 1.0, 0.0,
+         *  0.0, 0.0, 0.0, 1.0]
+         *
+         * Matrix.setIdentityM(sIdentityMatrix, 1)
+         * [0.0,
+         * 1.0, 0.0, 0.0, 0.0,
+         * 0.0, 1.0, 0.0, 0.0,
+         * 0.0, 0.0, 1.0, 0.0,
+         * 0.0, 0.0, 0.0, 1.0,
+         * 0.0]
+         */
         Matrix.setIdentityM(sIdentityMatrix, 0);
     }
 
@@ -57,13 +73,13 @@ public class GLUtil {
         }
     }
 
+    /**
+     * 读取OpenGL着色语言
+     */
     public static String readTextFileFromRaw(final Context context, final int resourceId) {
-        final InputStream inputStream = context.getResources().openRawResource(
-                resourceId);
-        final InputStreamReader inputStreamReader = new InputStreamReader(
-                inputStream);
-        final BufferedReader bufferedReader = new BufferedReader(
-                inputStreamReader);
+        final InputStream inputStream = context.getResources().openRawResource(resourceId);
+        final InputStreamReader inputStreamReader = new InputStreamReader(inputStream);
+        final BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
 
         String nextLine;
         final StringBuilder body = new StringBuilder();
@@ -130,7 +146,6 @@ public class GLUtil {
         if (programHandle != 0) {
             // Bind the vertex shader to the program.
             GLES20.glAttachShader(programHandle, vertexShaderHandle);
-
             // Bind the fragment shader to the program.
             GLES20.glAttachShader(programHandle, fragmentShaderHandle);
 
@@ -138,6 +153,7 @@ public class GLUtil {
             if (attributes != null) {
                 final int size = attributes.length;
                 for (int i = 0; i < size; i++) {
+                    // 将通用顶点属性索引与命名属性变量相关联
                     GLES20.glBindAttribLocation(programHandle, i, attributes[i]);
                 }
             }

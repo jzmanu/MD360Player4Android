@@ -12,6 +12,8 @@ import com.asha.vrlib.model.position.MDMutablePosition;
  * Created by hzqiujiadi on 16/1/22.
  * hzqiujiadi ashqalcn@gmail.com
  *
+ * 模型矩阵、视图矩阵、投影矩阵
+ *
  * response for model * view * projection
  */
 public class MD360Director {

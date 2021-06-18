@@ -12,6 +12,15 @@ import java.util.Arrays;
 import static com.asha.vrlib.common.VRUtil.checkMainThread;
 
 /**
+ * add jzman 20200524
+ * 抽象的Mode管理器应该有什么功能，这些功能由具体的管理的自己实现。
+ * 1. 创建IModeStrategy
+ * 2. 获取当前管理器所有的Mode
+ * 3. 切换Mode
+ * 4. 开启
+ * 5. 关闭
+ * 6. 获取IModeStrategy
+ *
  * Created by hzqiujiadi on 16/3/19.
  * hzqiujiadi ashqalcn@gmail.com
  */

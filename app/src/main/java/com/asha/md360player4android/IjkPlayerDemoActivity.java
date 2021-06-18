@@ -6,7 +6,7 @@ import android.content.Intent;
 import android.graphics.SurfaceTexture;
 import android.net.Uri;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
+import androidx.annotation.Nullable;
 import android.view.Surface;
 import android.view.TextureView;
 import android.view.View;
@@ -17,8 +17,9 @@ import tv.danmaku.ijk.media.player.IMediaPlayer;
 
 
 /**
+ * 普通视频播放
  * Created by hzqiujiadi on 16/7/6.
- * hzqiujiadi ashqalcn@gmail.com
+ * modify by jzman on 21/05/24
  */
 public class IjkPlayerDemoActivity extends Activity implements TextureView.SurfaceTextureListener {
 
@@ -29,10 +30,7 @@ public class IjkPlayerDemoActivity extends Activity implements TextureView.Surfa
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        // no title
         requestWindowFeature(Window.FEATURE_NO_TITLE);
-
-        // full screen
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
 

@@ -6,7 +6,7 @@ import android.graphics.Bitmap;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Bundle;
-import android.support.annotation.DrawableRes;
+import androidx.annotation.DrawableRes;
 import android.util.Log;
 import android.view.View;
 
@@ -80,14 +80,6 @@ public class BitmapPlayerActivity extends MD360PlayerActivity {
                 .into(mTarget);
     }
 
-    private Uri currentUri(){
-        if (nextUri == null){
-            return getUri();
-        } else {
-            return nextUri;
-        }
-    }
-
     @Override
     protected MDVRLibrary createVRLibrary() {
         return MDVRLibrary.with(this)
@@ -113,5 +105,13 @@ public class BitmapPlayerActivity extends MD360PlayerActivity {
     private Uri getDrawableUri(@DrawableRes int resId){
         Resources resources = getResources();
         return Uri.parse(ContentResolver.SCHEME_ANDROID_RESOURCE + "://" + resources.getResourcePackageName(resId) + '/' + resources.getResourceTypeName(resId) + '/' + resources.getResourceEntryName(resId) );
+    }
+
+    private Uri currentUri(){
+        if (nextUri == null){
+            return getUri();
+        } else {
+            return nextUri;
+        }
     }
 }

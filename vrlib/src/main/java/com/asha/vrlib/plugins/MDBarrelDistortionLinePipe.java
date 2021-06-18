@@ -59,7 +59,7 @@ public class MDBarrelDistortionLinePipe extends MDAbsLinePipe {
     @Override
     public void init(final Context context) {
         mProgram.build(context);
-        MDObject3DHelper.loadObj(context,object3D);
+//        MDObject3DHelper.loadObj(context,object3D);
     }
 
     @Override

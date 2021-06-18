@@ -11,7 +11,9 @@ import com.asha.vrlib.strategy.ModeManager;
  */
 public class DisplayModeManager extends ModeManager<AbsDisplayStrategy> implements IDisplayMode {
 
-    public static int[] sModes = {MDVRLibrary.DISPLAY_MODE_NORMAL, MDVRLibrary.DISPLAY_MODE_GLASS};
+    public static int[] sModes = {
+            MDVRLibrary.DISPLAY_MODE_NORMAL,
+            MDVRLibrary.DISPLAY_MODE_GLASS};
 
     private boolean antiDistortionEnabled;
     private BarrelDistortionConfig barrelDistortionConfig;
@@ -27,7 +29,7 @@ public class DisplayModeManager extends ModeManager<AbsDisplayStrategy> implemen
 
     @Override
     protected AbsDisplayStrategy createStrategy(int mode) {
-        switch (mode){
+        switch (mode) {
             case MDVRLibrary.DISPLAY_MODE_GLASS:
                 return new GlassStrategy();
             case MDVRLibrary.DISPLAY_MODE_NORMAL:

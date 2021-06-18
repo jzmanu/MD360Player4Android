@@ -57,10 +57,16 @@ public class MD360Program {
         mIsSkyboxHandle = GLES20.glGetUniformLocation(mProgramHandle, "u_IsSkybox");
     }
 
+    /**
+     * 顶点着色器
+     */
     protected String getVertexShader(Context context){
         return readTextFileFromRaw(context, R.raw.per_pixel_vertex_shader);
     }
 
+    /**
+     * 片元着色器
+     */
     protected String getFragmentShader(Context context){
         return FragmentShaderFactory.fs(context, mContentType);
     }

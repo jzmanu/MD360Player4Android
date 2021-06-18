@@ -53,21 +53,31 @@ public class MDVRLibrary {
     public static final int sMultiScreenSize = 2;
 
     // interactive mode
+    /** 陀螺仪 */
     public static final int INTERACTIVE_MODE_MOTION = 1;
+    /** 触摸 */
     public static final int INTERACTIVE_MODE_TOUCH = 2;
+    /** 触摸和陀螺仪 */
     public static final int INTERACTIVE_MODE_MOTION_WITH_TOUCH = 3;
     public static final int INTERACTIVE_MODE_CARDBORAD_MOTION = 4;
     public static final int INTERACTIVE_MODE_CARDBORAD_MOTION_WITH_TOUCH = 5;
 
     // display mode
+    /** 360全景模式 */
     public static final int DISPLAY_MODE_NORMAL = 101;
+    /** 眼镜模式 */
     public static final int DISPLAY_MODE_GLASS = 102;
 
     // projection mode
+    /** 全景 */
     public static final int PROJECTION_MODE_SPHERE = 201;
+    /** 鱼眼180 */
     public static final int PROJECTION_MODE_DOME180 = 202;
+    /** 鱼眼230 */
     public static final int PROJECTION_MODE_DOME230 = 203;
+    /** 鱼眼180上 */
     public static final int PROJECTION_MODE_DOME180_UPPER = 204;
+    /** 鱼眼230上 */
     public static final int PROJECTION_MODE_DOME230_UPPER = 205;
     /**
      * @deprecated since 2.0.4

@@ -29,6 +29,7 @@ public class VRUtil {
     public static void sensorRotationVector2Matrix(SensorEvent event, int rotation, float[] output) {
         if (!sIsTruncated) {
             try {
+                // 将旋转矢量转换为旋转矩阵，rotationVector用于存储旋转矩阵
                 SensorManager.getRotationMatrixFromVector(sUIThreadTmp, event.values);
             } catch (Exception e) {
                 // On some Samsung devices, SensorManager#getRotationMatrixFromVector throws an exception
@@ -62,6 +63,7 @@ public class VRUtil {
                 SensorManager.remapCoordinateSystem(sUIThreadTmp, SensorManager.AXIS_MINUS_Y, SensorManager.AXIS_X, output);
                 break;
         }
+        // 将矩阵旋转90度，为啥要旋转？
         Matrix.rotateM(output, 0, 90.0F, 1.0F, 0.0F, 0.0F);
     }
 
